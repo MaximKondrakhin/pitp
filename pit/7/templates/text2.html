@@ -1,0 +1,15 @@
+<DOCTYPE! html>
+<html>
+    <meta charset= "UTF-8">
+    <body>
+        {% extends 'text1.html' %}
+        {% block content %}
+        {% set words = ["Красный","Оранжевый","Желтый", "Зеленый","Голубой","Синий","Фиолетовый"]%}
+            <ul>
+                {% for i in  words %}
+                    <li>{{i}}</li>
+                {% endfor %}
+            </ul>
+        {% endblock  %}
+    </body>
+</html>

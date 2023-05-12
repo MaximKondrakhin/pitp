@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Заголовок</title>
+    </head>
+    <body>
+        {% import "macros.html" as  macros %}
+        <h1>Огромный текст</h1>
+        {% include "text1.html" %}
+        <p>{{name|title}} eat {{fruit}}</p>
+        {% if x ==y%}
+            <p>{{x}} равно {{y}}</p>
+        {% else %}
+            <p>{{x * y}}</p>
+        {% endif %}
+        <p></p>
+        {% set user_list = ['Andrew', 'Misha', 'Miron', 'Ivay', 'Tom'] %}
+        <ol>
+        {% for user in user_list %}
+            <li>{{user|upper}} {{loop.index}}</li>
+        {% endfor %}
+        </ol>
+        <p></p>
+        {% set text = "random text" %}
+        {% set num = 99%}
+        <p>{{ text|safe }} {{num|round(2)}}</p>
+        {{macros.XminusY(x,y)}}
+        {% include "text2.html" %}
+    </body>
+</html>
+
